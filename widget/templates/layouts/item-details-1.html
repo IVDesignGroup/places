@@ -29,10 +29,6 @@
                  class="col-xs-4 text-right pull-right padding-right-zero details-google-map-fix">
             </div>
         </div>
-        <div class="padded padding-top-ten padding-bottom-ten" ng-if="WidgetItem.showBodyContent()">
-            <p id="description" class="margin-zero" ng-bind-html="WidgetItem.item.data.bodyContent | safeHtml"></p>
-
-        </div>
         <div class="padded padding-top-zero">
             <div class="dynamic-links" ng-repeat="link in WidgetItem.item.data.links">
                 <p ng-click="WidgetItem.executeAction(link)">
@@ -42,5 +38,10 @@
                 </p>
             </div>
         </div>
+        <div class="padded padding-top-ten padding-bottom-ten" ng-if="WidgetItem.showBodyContent()">
+            <p id="description" class="margin-zero" ng-bind-html="WidgetItem.item.data.bodyContent | safeHtml"></p>
+
+        </div>
+        
     </div>
 </div>
