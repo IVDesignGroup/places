@@ -29,9 +29,13 @@
                  class="col-xs-4 text-right pull-right padding-right-zero details-google-map-fix">
             </div>
         </div>
-         <div class="plugin-banner clearfix">
-        <div class="margin-top-ten" ng-if="WidgetItem.item.data.links.length">
-                <a class="text-primary" style="text-align: center;" ng-click="WidgetItem.openLinks(WidgetItem.item.data.links)">Contact Info & Links</a>
+         <div class="padded padding-top-zero">
+            <div class="dynamic-links" ng-repeat="link in WidgetItem.item.data.links">
+                <p ng-click="WidgetItem.executeAction(link)">
+                    <span ng-if="!link.iconUrl" class="icon icon-cog"></span>
+                    <span ng-if="link.iconUrl" class="icon"><img load-image="1x1" data-final-src="{{link.iconUrl}}" crop-width="17" crop-height="17" crop-type="crop"/></span>
+                    {{link.title}}
+                </p>
             </div>
         </div>
         <div class="padded padding-top-ten padding-bottom-ten" ng-if="WidgetItem.showBodyContent()">
